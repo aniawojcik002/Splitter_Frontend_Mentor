@@ -1,0 +1,139 @@
+.calculator {  
+  background-color: $lightGrayishCyan1;
+  overflow-x: hidden;
+
+  &__logo {
+    img {
+      padding: 4.4rem 0;
+      margin: 0 auto;
+      display: block;
+      // text-align: center;
+    }
+  }
+  &__app {
+    background-color: $white;
+    border-radius: 2.5rem 2.5rem 0 0 ;
+  }
+    &__data {
+
+    }
+ 
+    &__bill {
+      position: relative;
+    
+      input {
+        background: url(/images/icon-dollar.svg) no-repeat 1.5rem center $lightGrayishCyan2;
+        margin-top: 1.2rem;
+        margin-bottom: 4rem;
+        cursor: pointer;
+      }
+
+    }
+  
+    &__tip {
+      .button {
+        padding: 2.2rem 0 4rem 0;
+        text-align: center;
+
+        &__item {
+
+        }
+      }
+    }
+
+    &__people {
+      position: relative;
+      input {
+        background: url(/images/icon-person.svg) no-repeat 1.5rem center $lightGrayishCyan2;
+        margin-top: 1.2rem;
+        margin-bottom: 4rem;
+        cursor: pointer;
+
+      }
+    }
+  &__result {
+    display: grid;
+    // font-size: $fon;
+    background-color: $veryDarkCyan;
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+    padding: 4.6rem 2.4rem 2.4rem 2.4rem;
+    border-radius: $border-rad-med;
+    color: $white;
+    gap: 0;
+    // justify-items: end;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "tip value1"
+    "total value2"
+    "button button";
+    row-gap: 1rem;
+  }
+  &__reset {
+    display: block;
+    width: 100%;
+    background-color: $strongCyan ;
+    padding: 1.4rem;
+    color: $veryDarkCyan;
+    border: none;
+    // outline: none;
+    border-radius: $border-rad-sm;
+    grid-area: button;
+    margin: 0 auto;
+    font-size: $font-sm;
+    font-weight: 700;
+    font-family: 'Space Mono', monospace, sans-serif;
+  }
+  
+  .description {
+    font-size: $font-xsm;
+    font-weight: 700;
+
+    &>span {
+      display: block;
+      color: $darkGrayishCyan1;
+    }
+  }
+
+  &__amount {
+
+
+  } 
+  &__total {
+
+
+  } 
+  .value {
+    font-size: $font-lg;
+    justify-self: end;
+    color: $strongCyan;
+    font-weight: 700;
+  }
+  &__tipValue {
+    grid-area: value1;
+
+  }
+
+  &__totalValue {
+    grid-area: value2;
+  }
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+}
