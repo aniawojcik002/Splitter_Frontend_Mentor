@@ -1,2 +1,2 @@
-# splitter_frontend_mentor
+# Splitter Frontend Mentor
 Splitter App from Frontend Mentor
