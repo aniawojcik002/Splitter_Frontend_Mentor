@@ -101,43 +101,7 @@ a:hover {
 // BUTTONS
 .button {
 
-  &__item {
-    height: 5rem;
-    width:100%;
-    text-align: center;
-    font-family: 'Space Mono', monospace;
-    font-weight: 700;
-    font-size: $font-med;
-    border: none;
-    border-radius:$border-rad-sm; 
-    outline: none;
-    cursor: pointer;
 
-    &--green {
-      background-color:$veryDarkCyan;
-      color: $white;
-    }
-  
-    &--light {
-      background-color: $lightGrayishCyan2;
-    }
-
-    &:focus {
-      background-color: $strongCyan;
-    }
-  }
-
-  &__customPercentage{
-
-    &:invalid:focus {
-      background-color: transparent;
-      outline:  #e05f2c solid 2px;
-    }
-    &:valid:focus {
-      background-color: transparent;
-      outline: solid 2px $strongCyan;
-    }
-  }
 }
 
 

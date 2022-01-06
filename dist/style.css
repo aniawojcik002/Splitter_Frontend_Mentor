@@ -105,42 +105,6 @@ a:hover {
   -moz-appearance: textfield;
 }
 
-.button__item {
-  height: 5rem;
-  width: 100%;
-  text-align: center;
-  font-family: 'Space Mono', monospace;
-  font-weight: 700;
-  font-size: 1.8rem;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-  cursor: pointer;
-}
-
-.button__item--green {
-  background-color: #00494d;
-  color: white;
-}
-
-.button__item--light {
-  background-color: #f4fafa;
-}
-
-.button__item:focus {
-  background-color: #26c0ab;
-}
-
-.button__customPercentage:invalid:focus {
-  background-color: transparent;
-  outline: #e05f2c solid 2px;
-}
-
-.button__customPercentage:valid:focus {
-  background-color: transparent;
-  outline: solid 2px #26c0ab;
-}
-
 label {
   font-size: 1.1rem;
 }
@@ -186,9 +150,44 @@ label {
   cursor: pointer;
 }
 
-.calculator__tip .button {
-  padding: 2.2rem 0 4rem 0;
+.calculator__tip .button__item {
+  height: 5rem;
+  width: 100%;
   text-align: center;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.calculator__tip .button__item--green {
+  background-color: #00494d;
+  color: white;
+}
+
+.calculator__tip .button__item--light {
+  background-color: #f4fafa;
+}
+
+.calculator__tip .button__item--green.active {
+  background-color: #26c0ab;
+}
+
+.calculator__tip .button__customPercentage:invalid:focus {
+  background-color: transparent;
+  outline: #e05f2c solid 2px;
+}
+
+.calculator__tip .button__customPercentage:valid:focus {
+  background-color: transparent;
+  outline: solid 2px #26c0ab;
+}
+
+.calculator__tip .button__customPercentage:valid.active {
+  outline: solid 2px #26c0ab;
 }
 
 .calculator__people {
