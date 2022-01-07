@@ -3,7 +3,7 @@
 const bill = document.getElementById('bill');
 const num_people = document.querySelector("#people");
 const custom = document.querySelector(".button__customPercentage"); 
-const reset = document.querySelector(".calculator__reset");
+const resetButton = document.querySelector(".calculator__reset");
 // text inputs in widow 
 const tipAmount = document.querySelector('.calculator__tipValue');
 const totalSum = document.querySelector('.calculator__totalValue');
@@ -67,6 +67,23 @@ function calculation() {
   }
  }
 
+
+//RESET Button
+resetButton.addEventListener('click', function() {
+  const el = document.getElementsByTagName("input");
+  for (var i=0; i < el.length; i++) {
+    if (el[i].type == "number") {
+      el[i].value = "";
+    }
+  };
+  [].forEach.call(button__item, function(el) {
+    el.classList.remove("active");
+    button_grid.classList.remove("active");
+  });
+  totalSum.innerHTML = '$ 0.00'
+  tipAmount.innerHTML = '$ 0.00'
+
+});
 
 
 
