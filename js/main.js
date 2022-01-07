@@ -5,8 +5,8 @@ const num_people = document.querySelector("#people");
 const custom = document.querySelector(".button__customPercentage"); 
 const reset = document.querySelector(".calculator__reset");
 // text inputs in widow 
-const tipValue = document.querySelector('.calculator__tipValue');
-const totalValue = document.querySelector('.calculator__totalValue');
+const tipAmount = document.querySelector('.calculator__tipValue');
+const totalSum = document.querySelector('.calculator__totalValue');
 
 const button_grid = document.querySelector('.button');
 // -----------------------------------------------------
@@ -46,10 +46,11 @@ function calculation() {
   const isFalse = Array.from(document.getElementsByClassName("button__item")).some(({classList}) => classList.contains('active'));
 
   if (billValue == '' || isFalse === false || peopleValue == '') {
-    tipValue.innerHTML = '$'+ '0.00';
+    tipAmount.innerHTML = '$'+ '0.00';
     // console.log('nie wszystkie pola uzupełnione')
   } else {
     let tip;
+    let total;
 
     if (buttonActive.value.includes('%')) {
       tip = parseFloat((buttonActive.value).replace('%',''));
@@ -58,7 +59,11 @@ function calculation() {
       tip = parseFloat(buttonActive.value);
     }
 
-    tipValue.innerHTML = '$' + ((parseFloat(bill.value) * tip * 0.01 ) /parseInt(num_people.value)).toFixed(2);
+    let tipValue = parseFloat(billValue) * tip * 0.01;
+
+    tipAmount.innerHTML = '$' + (tipValue /parseInt(peopleValue)).toFixed(2);
+    
+    totalSum.innerHTML = '$' + ((parseFloat(billValue) + tipValue ) /parseInt(peopleValue)).toFixed(2);
   }
  }
 
