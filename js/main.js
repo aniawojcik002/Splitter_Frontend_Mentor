@@ -7,6 +7,8 @@ const reset = document.querySelector(".calculator__reset");
 // text inputs in widow 
 const tipValue = document.querySelector('.calculator__tipValue');
 const totalValue = document.querySelector('.calculator__totalValue');
+
+const button_grid = document.querySelector('.button');
 // -----------------------------------------------------
 //All inputs in .button class -> button__items - HTML Collection
 const button__item = document.querySelectorAll(".button>input");
@@ -19,13 +21,16 @@ document.addEventListener('input', function(e) {
   calculation(); 
 });
 
-document.querySelector('.button').addEventListener('click', function(e) {
+button_grid.addEventListener('click', function(e) {
+  
 // removing class active from ALL..button children
   [].forEach.call(button__item, function(el) {
     el.classList.remove("active");
+    button_grid.classList.remove("active");
   });
 // asigning class active to current target
-  e.target.classList.add("active");
+  e.target.classList.add("active"); //to develop better solution, now it's adding active class to parent element 
+
   // ------------------------
 // calling calulation function after CLICK event
   calculation();
@@ -36,6 +41,7 @@ function calculation() {
   let billValue = bill.value;
   let peopleValue = num_people.value;
   let customValue = custom.value;
+  const buttonActive = document.getElementsByClassName('active')[0];
 
   const isFalse = Array.from(document.getElementsByClassName("button__item")).some(({classList}) => classList.contains('active'));
 
@@ -43,7 +49,14 @@ function calculation() {
     tipValue.innerHTML = '$'+ '0.00';
     // console.log('nie wszystkie pola uzupełnione')
   } else {
-    const tip = parseFloat((document.getElementsByClassName('active')[0].value).replace('%',''));
+    let tip;
+
+    if (buttonActive.value.includes('%')) {
+      tip = parseFloat((buttonActive.value).replace('%',''));
+      
+    } else {
+      tip = parseFloat(buttonActive.value);
+    }
 
     tipValue.innerHTML = '$' + ((parseFloat(bill.value) * tip * 0.01 ) /parseInt(num_people.value)).toFixed(2);
   }
