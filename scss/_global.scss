@@ -56,7 +56,7 @@ a:hover {
 }
 
 // INPUTs
-.input {
+.input__long {
   width:100%;
   height: 3.2rem;
   background-color: $lightGrayishCyan2;
@@ -68,22 +68,23 @@ a:hover {
   color: $veryDarkCyan;
   font-weight: 700;
   outline: none;
-
+  
   &:invalid:focus + span:after {
     position: absolute; //remember to add relative position to parent
     top: 0rem;
     right:0rem;
-    content: "Can't be zero";
+    content: "Invalid value";
     color: #e05f2c;
     font-size: $font-xsm;
     font-weight: 700;
   }
-  &:invalid:focus {
+  &:invalid {
     outline:  #e05f2c solid 2px;
   }
   &:valid:focus {
     outline:  $strongCyan solid 2px;
   }
+
 }
 //disabling arrows from number input
 .hide-arrow {

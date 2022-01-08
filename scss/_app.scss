@@ -135,11 +135,11 @@
   }
 
   &__amount {
-
+    grid-area: tip; 
 
   } 
   &__total {
-
+    grid-area: total;
 
   } 
   .value {

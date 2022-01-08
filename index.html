@@ -34,16 +34,15 @@
           <div class="calculator__bill ">
 
             <label for="bill" class="text text--gray ">Bill</label>
-            <input id="bill" name="bill" class="input hide-arrow" type="number"> 
-            <span class="validity"></span>
+            <input id="bill" name="bill" class="input__long hide-arrow" type="number" min="1" value=""> 
+            <span class="validity validity__bill"></span>
           </div>
-          <!-- onkeyup="calculate()"> -->
+
 
           <div class="calculator__tip">
 
             <label class="text text--gray">Select Tip %</label>
             <div class="button grid">
-<!-- 23 -->
               <input class="button__item button__item--green flex" readonly value="5%" type="button">
               <input class="button__item button__item--green flex" readonly name="tip_value" value="10%">
               <input class="button__item button__item--green flex" readonly name="tip_value" value="15%">
@@ -57,7 +56,7 @@
           <div class="calculator__people">
             
             <label for="people2" class="text text--gray">Number of people</label>
-            <input id= "people" name="people2" class="input hide-arrow" type="number" min= "1" max="1000" required>
+            <input id= "people" name="people2" class="input__long hide-arrow" type="number" min= "1" max="1000" >
             <span class="validity"></span>
 
           </div>

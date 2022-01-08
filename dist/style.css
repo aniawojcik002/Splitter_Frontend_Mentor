@@ -64,7 +64,7 @@ a:hover {
   padding-left: 2rem;
 }
 
-.input {
+.input__long {
   width: 100%;
   height: 3.2rem;
   background-color: #f4fafa;
@@ -78,21 +78,21 @@ a:hover {
   outline: none;
 }
 
-.input:invalid:focus + span:after {
+.input__long:invalid:focus + span:after {
   position: absolute;
   top: 0rem;
   right: 0rem;
-  content: "Can't be zero";
+  content: "Invalid value";
   color: #e05f2c;
   font-size: 1.1rem;
   font-weight: 700;
 }
 
-.input:invalid:focus {
+.input__long:invalid {
   outline: #e05f2c solid 2px;
 }
 
-.input:valid:focus {
+.input__long:valid:focus {
   outline: #26c0ab solid 2px;
 }
 
@@ -245,6 +245,18 @@ label {
 .calculator .description > span {
   display: block;
   color: #5e7a7d;
+}
+
+.calculator__amount {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: tip;
+}
+
+.calculator__total {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: total;
 }
 
 .calculator .value {

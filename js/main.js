@@ -1,9 +1,9 @@
 "use strict";
 
 const bill = document.getElementById('bill');
-const num_people = document.querySelector("#people");
-const custom = document.querySelector(".button__customPercentage"); 
-const resetButton = document.querySelector(".calculator__reset");
+const num_people = document.querySelector('#people');
+const custom = document.querySelector('.button__customPercentage'); 
+const resetButton = document.querySelector('.calculator__reset');
 // text inputs in widow 
 const tipAmount = document.querySelector('.calculator__tipValue');
 const totalSum = document.querySelector('.calculator__totalValue');
@@ -11,46 +11,48 @@ const totalSum = document.querySelector('.calculator__totalValue');
 const button_grid = document.querySelector('.button');
 // -----------------------------------------------------
 //All inputs in .button class -> button__items - HTML Collection
-const button__item = document.querySelectorAll(".button>input");
+const button__item = document.querySelectorAll('.button>input');
 // -----------------------------------------------
-
-
+function removeActive() {
+  // function that removes class active from ALL..button children
+  [].forEach.call(button__item, function(el) {
+    el.classList.remove('active');
+    button_grid.classList.remove('active');
+  });
+}
 
 document.addEventListener('input', function(e) {
-// calling calulation function after INPUT event
-  calculation(); 
+  // calling calulation function after INPUT event
+  // console.log(bill.value);
+  calculation();
+  // console.log(typeof(parseFloat(bill.value)));
+
 });
 
 button_grid.addEventListener('click', function(e) {
-  
-// removing class active from ALL..button children
-  [].forEach.call(button__item, function(el) {
-    el.classList.remove("active");
-    button_grid.classList.remove("active");
-  });
+// calling function that removes class active from ALL..button children
+  removeActive();
 // asigning class active to current target
-  e.target.classList.add("active"); //to develop better solution, now it's adding active class to parent element 
+  e.target.classList.add('active'); //to develop better solution, now it's adding active class to parent element 
 
-  // ------------------------
 // calling calulation function after CLICK event
   calculation();
 });
 
-
 function calculation() {
   let billValue = bill.value;
   let peopleValue = num_people.value;
-  let customValue = custom.value;
+
   const buttonActive = document.getElementsByClassName('active')[0];
 
-  const isFalse = Array.from(document.getElementsByClassName("button__item")).some(({classList}) => classList.contains('active'));
 
-  if (billValue == '' || isFalse === false || peopleValue == '') {
-    tipAmount.innerHTML = '$'+ '0.00';
-    // console.log('nie wszystkie pola uzupełnione')
+  const isActive = Array.from(document.getElementsByClassName("button__item")).some(({classList}) => classList.contains('active'));
+
+  if (billValue == '' || isActive === false || peopleValue == '' || parseInt(peopleValue) <= 0 || parseFloat(billValue) <= 0 ) {
+    tipAmount.textContent = '$'+ '0.00';
+
   } else {
     let tip;
-    let total;
 
     if (buttonActive.value.includes('%')) {
       tip = parseFloat((buttonActive.value).replace('%',''));
@@ -59,29 +61,29 @@ function calculation() {
       tip = parseFloat(buttonActive.value);
     }
 
-    let tipValue = parseFloat(billValue) * tip * 0.01;
+    let tipValue = billValue * tip * 0.01;
 
-    tipAmount.innerHTML = '$' + (tipValue /parseInt(peopleValue)).toFixed(2);
+    tipAmount.textContent = '$' + (tipValue / parseInt(peopleValue)).toFixed(2);
     
-    totalSum.innerHTML = '$' + ((parseFloat(billValue) + tipValue ) /parseInt(peopleValue)).toFixed(2);
+    totalSum.textContent = '$' + ((parseFloat(billValue) + tipValue ) / parseInt(peopleValue)).toFixed(2);
   }
  }
 
 
 //RESET Button
 resetButton.addEventListener('click', function() {
-  const el = document.getElementsByTagName("input");
-  for (var i=0; i < el.length; i++) {
-    if (el[i].type == "number") {
+  // removing inputs value 
+  const el = document.getElementsByTagName('input');
+  for (let i=0; i < el.length; i++) {
+    if (el[i].type == 'number') {
       el[i].value = "";
     }
   };
-  [].forEach.call(button__item, function(el) {
-    el.classList.remove("active");
-    button_grid.classList.remove("active");
-  });
-  totalSum.innerHTML = '$ 0.00'
-  tipAmount.innerHTML = '$ 0.00'
+  // removing active class from .button__grid
+  removeActive();
+  // zero value for results
+  totalSum.textContent = '$ 0.00'
+  tipAmount.textContent = '$ 0.00'
 
 });
 
