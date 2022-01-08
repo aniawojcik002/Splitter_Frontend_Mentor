@@ -4,17 +4,19 @@ const bill = document.getElementById('bill');
 const num_people = document.querySelector('#people');
 const custom = document.querySelector('.button__customPercentage'); 
 const resetButton = document.querySelector('.calculator__reset');
+
 // text inputs in widow 
 const tipAmount = document.querySelector('.calculator__tipValue');
 const totalSum = document.querySelector('.calculator__totalValue');
 
 const button_grid = document.querySelector('.button');
-// -----------------------------------------------------
+
 //All inputs in .button class -> button__items - HTML Collection
 const button__item = document.querySelectorAll('.button>input');
-// -----------------------------------------------
+
+
 function removeActive() {
-  // function that removes class active from ALL..button children
+  // function that removes class active from ALL..button children and button
   [].forEach.call(button__item, function(el) {
     el.classList.remove('active');
     button_grid.classList.remove('active');
@@ -22,19 +24,17 @@ function removeActive() {
 }
 
 document.addEventListener('input', function(e) {
-  // calling calulation function after INPUT event
-  // console.log(bill.value);
+// calling calulation function after INPUT event
   calculation();
-  // console.log(typeof(parseFloat(bill.value)));
-
 });
 
 button_grid.addEventListener('click', function(e) {
 // calling function that removes class active from ALL..button children
   removeActive();
-// asigning class active to current target
-  e.target.classList.add('active'); //to develop better solution, now it's adding active class to parent element 
 
+// asigning class active to current  //find better solution
+  e.target.classList.add('active');
+  
 // calling calulation function after CLICK event
   calculation();
 });
@@ -44,11 +44,10 @@ function calculation() {
   let peopleValue = num_people.value;
   
   const buttonActive = document.getElementsByClassName('active')[0];
-
-
+  
   const isActive = Array.from(document.getElementsByClassName("button__item")).some(({classList}) => classList.contains('active'));
-
-  if (billValue == '' || isActive === false || peopleValue == '' || parseInt(peopleValue) <= 0 || parseFloat(billValue) <= 0 || parseInt(custom.value) <= 0) {
+// zero value if one of conditions not allow for callculation
+  if (billValue == '' || isActive === false || peopleValue == '' || parseInt(peopleValue) <= 0 || parseFloat(billValue) <= 0 || parseInt(custom.value) <= 0 || Number.isInteger(parseFloat(peopleValue)) === false) {
     tipAmount.textContent = '$'+ '0.00';
     totalSum.textContent = '$'+ '0.00';
 
@@ -56,17 +55,19 @@ function calculation() {
     let tip;
 
     if (buttonActive.value.includes('%')) {
+
       tip = parseFloat((buttonActive.value).replace('%',''));
       
     } else {
+
       tip = parseFloat(buttonActive.value);
     }
 
     let tipValue = billValue * tip * 0.01;
 
-    tipAmount.textContent = '$' + (tipValue / parseInt(peopleValue)).toFixed(2);
+    tipAmount.textContent = '$' + (tipValue / parseFloat(peopleValue)).toFixed(2);
     
-    totalSum.textContent = '$' + ((parseFloat(billValue) + tipValue ) / parseInt(peopleValue)).toFixed(2);
+    totalSum.textContent = '$' + ((parseFloat(billValue) + tipValue ) / parseFloat(peopleValue)).toFixed(2);
   }
  }
 
