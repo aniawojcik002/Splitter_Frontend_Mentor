@@ -44,10 +44,16 @@
           border-radius:$border-rad-sm; 
           outline: none;
           cursor: pointer;
+          transition: all .3s ease-in-out;
       
           &--green {
             background-color:$veryDarkCyan;
             color: $white;
+            
+            &:hover {
+              background-color: $lightGrayishCyan1;
+              color: $veryDarkCyan;
+            }
           }
         
           &--light {
@@ -94,7 +100,7 @@
     }
   &__result {
     display: grid;
-    // font-size: $fon;
+
     background-color: $veryDarkCyan;
     margin-left: 2.4rem;
     margin-right: 2.4rem;
@@ -102,7 +108,6 @@
     border-radius: $border-rad-med;
     color: $white;
     gap: 0;
-    // justify-items: end;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
@@ -118,13 +123,18 @@
     padding: 1.4rem;
     color: $veryDarkCyan;
     border: none;
-    // outline: none;
     border-radius: $border-rad-sm;
     grid-area: button;
     margin: 0 auto;
     font-size: $font-sm;
     font-weight: 700;
     font-family: 'Space Mono', monospace, sans-serif;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    
+    &:hover {
+      background-color: $lightGrayishCyan1 ;
+    }
   }
   
   .description {

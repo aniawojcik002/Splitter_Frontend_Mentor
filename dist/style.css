@@ -105,10 +105,6 @@ a:hover {
   -moz-appearance: textfield;
 }
 
-label {
-  font-size: 1.1rem;
-}
-
 .text {
   font-weight: 700;
   color: #5e7a7d;
@@ -161,11 +157,18 @@ label {
   border-radius: 5px;
   outline: none;
   cursor: pointer;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .calculator__tip .button__item--green {
   background-color: #00494d;
   color: white;
+}
+
+.calculator__tip .button__item--green:hover {
+  background-color: #c5e4e7;
+  color: #00494d;
 }
 
 .calculator__tip .button__item--light {
@@ -239,6 +242,13 @@ label {
   font-size: 1.4rem;
   font-weight: 700;
   font-family: 'Space Mono', monospace, sans-serif;
+  cursor: pointer;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.calculator__reset:hover {
+  background-color: #c5e4e7;
 }
 
 .calculator .description {
