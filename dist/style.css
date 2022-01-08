@@ -176,7 +176,7 @@ label {
   background-color: #26c0ab;
 }
 
-.calculator__tip .button__customPercentage:invalid:focus {
+.calculator__tip .button__customPercentage:invalid {
   background-color: transparent;
   outline: #e05f2c solid 2px;
 }
@@ -188,6 +188,10 @@ label {
 
 .calculator__tip .button__customPercentage:valid.active {
   outline: solid 2px #26c0ab;
+}
+
+.calculator__tip .button__customPercentage:invalid.active {
+  outline: #e05f2c solid 2px;
 }
 
 .calculator__people {

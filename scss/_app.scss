@@ -61,7 +61,7 @@
       
         &__customPercentage{
       
-          &:invalid:focus {
+          &:invalid {
             background-color: transparent;
             outline:  #e05f2c solid 2px;
           }
@@ -71,6 +71,9 @@
           }
           &:valid.active {
             outline: solid 2px $strongCyan;
+          }
+          &:invalid.active {
+            outline:  #e05f2c solid 2px;
           }
         }
         &__item {

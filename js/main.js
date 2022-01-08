@@ -42,14 +42,15 @@ button_grid.addEventListener('click', function(e) {
 function calculation() {
   let billValue = bill.value;
   let peopleValue = num_people.value;
-
+  
   const buttonActive = document.getElementsByClassName('active')[0];
 
 
   const isActive = Array.from(document.getElementsByClassName("button__item")).some(({classList}) => classList.contains('active'));
 
-  if (billValue == '' || isActive === false || peopleValue == '' || parseInt(peopleValue) <= 0 || parseFloat(billValue) <= 0 ) {
+  if (billValue == '' || isActive === false || peopleValue == '' || parseInt(peopleValue) <= 0 || parseFloat(billValue) <= 0 || parseInt(custom.value) <= 0) {
     tipAmount.textContent = '$'+ '0.00';
+    totalSum.textContent = '$'+ '0.00';
 
   } else {
     let tip;
@@ -82,8 +83,8 @@ resetButton.addEventListener('click', function() {
   // removing active class from .button__grid
   removeActive();
   // zero value for results
-  totalSum.textContent = '$ 0.00'
-  tipAmount.textContent = '$ 0.00'
+  totalSum.textContent = '$0.00'
+  tipAmount.textContent = '$0.00'
 
 });
 

@@ -34,7 +34,7 @@
           <div class="calculator__bill ">
 
             <label for="bill" class="text text--gray ">Bill</label>
-            <input id="bill" name="bill" class="input__long hide-arrow" type="number" min="1" value=""> 
+            <input id="bill" name="bill" class="input__long hide-arrow" type="number" min="1" step="0.01"> 
             <span class="validity validity__bill"></span>
           </div>
 
@@ -48,7 +48,7 @@
               <input class="button__item button__item--green flex" readonly name="tip_value" value="15%">
               <input class="button__item button__item--green flex" readonly name="tip_value" value="25%">
               <input class="button__item button__item--green flex" readonly name="tip_value" value="50%">
-              <input class="button__item button__customPercentage button__item--light flex hide-arrow" type="number" min= "1" max="100" step= "1" value= "" placeholder= "Custom">
+              <input class="button__item button__customPercentage button__item--light flex hide-arrow" type="number" min= "1" max="100" step="0.01" placeholder= "Custom">
             </div>
 
           </div>
@@ -56,7 +56,7 @@
           <div class="calculator__people">
             
             <label for="people2" class="text text--gray">Number of people</label>
-            <input id= "people" name="people2" class="input__long hide-arrow" type="number" min= "1" max="1000" >
+            <input id= "people" name="people2" class="input__long hide-arrow" type="number" min= "1" >
             <span class="validity"></span>
 
           </div>
