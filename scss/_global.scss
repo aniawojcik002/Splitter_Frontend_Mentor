@@ -13,6 +13,7 @@ html {
 
 body {
   font-family: 'Space Mono', monospace, sans-serif;
+  // background-color: $lightGrayishCyan1;
 }
 
 a, 
@@ -74,12 +75,12 @@ a:hover {
     top: 0rem;
     right:0rem;
     content: "Invalid value";
-    color: #e05f2c;
+    color: $error-color;
     font-size: $font-xsm;
     font-weight: 700;
   }
   &:invalid {
-    outline:  #e05f2c solid 2px;
+    outline:  $error-color solid 2px;
   }
   &:valid:focus {
     outline:  $strongCyan solid 2px;
@@ -109,12 +110,12 @@ a:hover {
 
 // buttons label tag;
 label {
+
 }
 
 // FONTs
 .text {
   font-weight: 700;
-  color: $darkGrayishCyan1;
   text-align: left;
 
   &--gray { 
