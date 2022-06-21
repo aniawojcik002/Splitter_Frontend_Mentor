@@ -38,24 +38,6 @@ a:hover {
 }
 
 
-.padding {
-  // max-width: 144.0rem;
-
-  &--lr {
-    padding-right: 3rem;
-    padding-left: 3rem;
-  }
-  &--tb {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-
-  &--lr2 {
-    padding-right: 2rem;
-    padding-left: 2rem;
-  }
-}
-
 // INPUTs
 .input__long {
   width:100%;
@@ -100,17 +82,6 @@ a:hover {
   &[type=number] {
       -moz-appearance: textfield;
   }
-}
-// BUTTONS
-.button {
-
-
-}
-
-
-// buttons label tag;
-label {
-
 }
 
 // FONTs
