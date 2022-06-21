@@ -1,3 +1,6 @@
+### Online preview
+https://strong-arithmetic-db7ed4.netlify.app/
+
 # Frontend Mentor - Tip calculator app solution
 
 This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
@@ -23,17 +26,18 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 Users should be able to:
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Calculate the correct tip and total cost of the bill per person
+- View the optimal layout for the app depending on their device's screen size 
+Two main view: mobile and desktop - From my point of view should be one more view for medium devices (thing to develop in the future)
+- See hover states for all interactive elements on the page 
+- Calculate the correct tip and total cost of the bill per person (This is simple app so calculation for big numbers are not adequate... think to develop in the future)
 
 ###Screenshot
-
+![screenshot](https://netlify-cocoon.netlify.app/.netlify/functions/fetch?code=307&path=eyJzaXRlX2lkIjoiZDRhMjQyMjAtOGFlMy00MWJlLWI3ZWItZGQ0MmZhMTQ3NGQ4IiwiZGVwbG95X2lkIjoiNjJiMjNhODYyZmZkYWEwMDA4OWUwZDJmIiwiaWQiOiI3YjY1NDJkYS1kZThlLTQ3MWMtOWEzZS1lZjZjNzhiYzE2Y2MifQ==)
 
 
 ### Links
-
-Not available live view of project
+Live view:
+https://strong-arithmetic-db7ed4.netlify.app/
 
 ## My process
 
@@ -44,17 +48,17 @@ Not available live view of project
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- JavaScript
+- Bascics of JavaScript
 
 
 ### What I learned
 
-Mobile-first aproach, CSS Grid, CSS Flexbox, CSS preprocessors SCSS
+Mobile-first aproach, CSS Grid, CSS Flexbox, CSS preprocessors SCSS, JavaScript basics
 
 ### Continued development
 
 Project to improve in the future. 
-Write the same application using React library
+For instanceWrite the same application using React library
 
 
 ### Useful resources
@@ -64,9 +68,11 @@ Write the same application using React library
 https://css-tricks.com/snippets/css/complete-guide-grid/
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
+-Conventional commits
+https://www.conventionalcommits.org/en/v1.0.0/
 
 ## Author
 
-Coded by Ania Wójcik
+Coded by Ania WÃ³jcik
 
 
