@@ -32,8 +32,8 @@ Two main view: mobile and desktop - From my point of view should be one more vie
 
 **Desktop view**
 ![screenshot](https://netlify-cocoon.netlify.app/.netlify/functions/fetch?code=307&path=eyJzaXRlX2lkIjoiZDRhMjQyMjAtOGFlMy00MWJlLWI3ZWItZGQ0MmZhMTQ3NGQ4IiwiZGVwbG95X2lkIjoiNjJiMjNhODYyZmZkYWEwMDA4OWUwZDJmIiwiaWQiOiI3YjY1NDJkYS1kZThlLTQ3MWMtOWEzZS1lZjZjNzhiYzE2Y2MifQ==)
-**Mobile view**
-
+**Mobile view** - screenshot to develop
+![screenshot](https://netlify-cocoon.netlify.app/.netlify/functions/fetch?code=307&path=eyJzaXRlX2lkIjoiZDRhMjQyMjAtOGFlMy00MWJlLWI3ZWItZGQ0MmZhMTQ3NGQ4IiwiZGVwbG95X2lkIjoiNjJiMjNhODYyZmZkYWEwMDA4OWUwZDJmIiwiaWQiOiIzMTM5MDdhOC05MzRiLTRiNGUtODQ0Yy1kNDZmNDVhMzA5ZDkifQ==)
 
 ### Links
 Live view:
