@@ -30,8 +30,9 @@ Two main view: mobile and desktop - From my point of view should be one more vie
 - See hover states for all interactive elements on the page 
 - Calculate the correct tip and total cost of the bill per person (This is simple app so calculation for big numbers are not adequate... think to develop in the future)
 
-###Screenshot
+**Desktop view**
 ![screenshot](https://netlify-cocoon.netlify.app/.netlify/functions/fetch?code=307&path=eyJzaXRlX2lkIjoiZDRhMjQyMjAtOGFlMy00MWJlLWI3ZWItZGQ0MmZhMTQ3NGQ4IiwiZGVwbG95X2lkIjoiNjJiMjNhODYyZmZkYWEwMDA4OWUwZDJmIiwiaWQiOiI3YjY1NDJkYS1kZThlLTQ3MWMtOWEzZS1lZjZjNzhiYzE2Y2MifQ==)
+**Mobile view**
 
 
 ### Links
