@@ -146,6 +146,8 @@ a:hover {
   background-color: white;
   border-radius: 2.5rem 2.5rem 0 0;
   font-size: 1.2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 @media (min-width: 64em) {
@@ -166,6 +168,11 @@ a:hover {
     font-size: 1.4rem;
     padding: 2.2rem;
   }
+}
+
+.calculator__data {
+  padding-right: 3rem;
+  padding-left: 3rem;
 }
 
 @media (min-width: 64em) {
@@ -250,11 +257,34 @@ a:hover {
   cursor: pointer;
 }
 
+@media (min-width: 64em) {
+  .calculator__people input {
+    margin-bottom: 0rem;
+  }
+}
+
 .calculator__result {
   background-color: #00494d;
   padding: 2.4rem 0 2.4rem 0;
   border-radius: 15px;
   margin: 0 2.4rem;
+}
+
+@media (min-width: 64em) {
+  .calculator__result {
+    width: 60%;
+    margin: 0rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 .calculator__container {
@@ -276,13 +306,6 @@ a:hover {
           hyphens: auto;
 }
 
-@media (min-width: 64em) {
-  .calculator__container {
-    width: 50%;
-    margin: 0;
-  }
-}
-
 .calculator__reset {
   display: block;
   width: calc(100vw - 10rem);
@@ -291,7 +314,6 @@ a:hover {
   color: #00494d;
   border: none;
   border-radius: 5px;
-  grid-area: button;
   margin: 0 auto;
   font-weight: 700;
   font-family: "Space Mono", monospace, sans-serif;
@@ -300,20 +322,19 @@ a:hover {
   transition: background-color .3s ease;
 }
 
+@media (min-width: 40em) {
+  .calculator__reset {
+    font-size: 1.8rem;
+  }
+}
+
 @media (min-width: 64em) {
   .calculator__reset {
-    width: 100%;
+    display: block;
+    width: calc(100% - 4rem);
     height: 4.8rem;
-    -ms-flex-item-align: end;
-        -ms-grid-row-align: end;
-        align-self: end;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     font-size: 1.8rem;
+    justify-self: flex-end;
   }
 }
 
@@ -371,6 +392,8 @@ a:hover {
 @media (min-width: 64em) {
   .calculator .value {
     font-size: 3.5rem;
+    -ms-grid-column-align: end;
+        justify-self: end;
   }
 }
 
