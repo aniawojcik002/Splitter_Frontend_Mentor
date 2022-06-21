@@ -146,6 +146,8 @@ a:hover {
   background-color: white;
   border-radius: 2.5rem 2.5rem 0 0;
   font-size: 1.2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 @media (min-width: 64em) {
@@ -166,6 +168,11 @@ a:hover {
     font-size: 1.4rem;
     padding: 2.2rem;
   }
+}
+
+.calculator__data {
+  padding-right: 3rem;
+  padding-left: 3rem;
 }
 
 @media (min-width: 64em) {
@@ -250,11 +257,24 @@ a:hover {
   cursor: pointer;
 }
 
+@media (min-width: 64em) {
+  .calculator__people input {
+    margin-bottom: 0rem;
+  }
+}
+
 .calculator__result {
   background-color: #00494d;
   padding: 2.4rem 0 2.4rem 0;
   border-radius: 15px;
   margin: 0 2.4rem;
+}
+
+@media (min-width: 64em) {
+  .calculator__result {
+    width: 60%;
+    margin: 0rem;
+  }
 }
 
 .calculator__container {
@@ -276,13 +296,6 @@ a:hover {
           hyphens: auto;
 }
 
-@media (min-width: 64em) {
-  .calculator__container {
-    width: 50%;
-    margin: 0;
-  }
-}
-
 .calculator__reset {
   display: block;
   width: calc(100vw - 10rem);
@@ -298,6 +311,12 @@ a:hover {
   cursor: pointer;
   -webkit-transition: background-color .3s ease;
   transition: background-color .3s ease;
+}
+
+@media (min-width: 40em) {
+  .calculator__reset {
+    font-size: 1.8rem;
+  }
 }
 
 @media (min-width: 64em) {
@@ -371,6 +390,8 @@ a:hover {
 @media (min-width: 64em) {
   .calculator .value {
     font-size: 3.5rem;
+    -ms-grid-column-align: end;
+        justify-self: end;
   }
 }
 
