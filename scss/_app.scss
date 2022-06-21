@@ -136,6 +136,9 @@
     @include breakpoint-up(large) {
       width: 60%;
       margin: 0rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
   &__container {
@@ -165,7 +168,6 @@
     color: $veryDarkCyan;
     border: none;
     border-radius: $border-rad-sm;
-    grid-area: button;
     margin: 0 auto;
     font-weight: 700;
     font-family: "Space Mono", monospace, sans-serif;
@@ -176,12 +178,11 @@
       font-size: $font-med;
     }
     @include breakpoint-up(large) {
-      width: 100%;
+      display: block;
+      width: calc(100% - 4rem);
       height: 4.8rem;
-      align-self: end;
-      justify-content: center;
-      align-items: center;
       font-size: $font-med;
+      justify-self: flex-end;
     }
     
     &:active {
