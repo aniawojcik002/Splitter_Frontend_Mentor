@@ -262,13 +262,18 @@ a:hover {
   display: grid;
   color: white;
   gap: 0;
-  padding: .4rem 2.4rem;
+  padding: 0 2.4rem 2rem 2.4rem;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
       grid-template-areas: "tip value1" "total value2";
   row-gap: 1rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 @media (min-width: 64em) {
@@ -280,7 +285,8 @@ a:hover {
 
 .calculator__reset {
   display: block;
-  width: 80vw;
+  width: calc(100vw - 10rem);
+  height: 4rem;
   background-color: #26c0ab;
   color: #00494d;
   border: none;
@@ -290,10 +296,8 @@ a:hover {
   font-weight: 700;
   font-family: "Space Mono", monospace, sans-serif;
   cursor: pointer;
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transition: background-color .3s ease;
+  transition: background-color .3s ease;
 }
 
 @media (min-width: 64em) {
@@ -313,8 +317,15 @@ a:hover {
   }
 }
 
-.calculator__reset:hover {
+.calculator__reset:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.calculator__reset:hover, .calculator__reset:active {
   background-color: #c5e4e7;
+  -webkit-box-shadow: 2px 2px 2px blue;
+          box-shadow: 2px 2px 2px blue;
 }
 
 .calculator .description {
