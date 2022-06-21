@@ -1,9 +1,11 @@
-.calculator {  
+*{
+  box-sizing: border-box;
+}
+.calculator {
   background-color: $lightGrayishCyan1;
   overflow-x: hidden;
   height: 100vh;
   @include breakpoint-up(large) {
-
   }
 
   &__logo {
@@ -13,222 +15,203 @@
       display: block;
 
       @include breakpoint-up(large) {
-        padding-top: 16rem;
-        padding-bottom: 9rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
       }
     }
   }
   &__app {
     background-color: $white;
     border-radius: 2.5rem 2.5rem 0 0;
-    font-size: $font-sm;
+    font-size: $font-xsm;
 
-    // breakpoint for medium and up screens
-    @include breakpoint-up(medium) {
+    // breakpoint for large and up screens
+    @include breakpoint-up(large) {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       margin: 0 auto;
-      width: 70%;
+      width: 60%;
       border-radius: $border-rad-med;
-      font-size: $font-med;
-      padding: 3.2rem;
-
+      font-size: $font-sm;
+      padding: 2.2rem;
     }
   }
-    &__data {
-      @include breakpoint-up(large) {
-        width:50%;
-        padding: 0;
-        padding-right: 3.2rem;
-      }
+  &__data {
+    @include breakpoint-up(large) {
+      width: 50%;
+      padding: 0;
+      padding-right: 3.2rem;
     }
- 
-    &__bill {
-      position: relative;
-    
-      input {
-        background: url(/images/icon-dollar.svg) no-repeat 1.5rem center $lightGrayishCyan2;
-        margin-top: 1.2rem;
-        margin-bottom: 4rem;
+  }
+
+  &__bill {
+    position: relative;
+
+    input {
+      background: url(/images/icon-dollar.svg) no-repeat 1.5rem center
+        $lightGrayishCyan2;
+      margin-top: 0.8rem; //distance between name and input
+      margin-bottom: 0.8rem;
+      cursor: pointer;
+    }
+    @include breakpoint-up(large) {
+      font-size: $font-sm;
+    }
+  }
+
+  &__tip {
+    .button {
+      padding: 0.8rem 0 0.8rem 0;
+      &__item {
+        height: 4rem;
+        width: 100%;
+        text-align: center;
+        font-family: "Space Mono", monospace;
+        font-weight: 700;
+        font-size: $font-sm;
+        border: none;
+        border-radius: $border-rad-sm;
+        outline: none;
         cursor: pointer;
-      }
-      @include breakpoint-up(large) {
-        font-size: $font-med;
-      }
-    }
-  
-    &__tip {
-      .button {
-        padding: 2.2rem 0 4rem 0;
-        &__item {
-          height: 5rem;
-          width:100%;
-          text-align: center;
-          font-family: 'Space Mono', monospace;
-          font-weight: 700;
-          font-size: $font-med;
-          border: none;
-          border-radius:$border-rad-sm; 
-          outline: none;
-          cursor: pointer;
-          transition: all .3s ease-in-out;
-      
-          &--green {
-            background-color:$veryDarkCyan;
-            color: $white;
-            
-            &:hover {
+        transition: all 0.3s ease-in-out;
+
+        &--green {
+          background-color: $veryDarkCyan;
+          color: $white;
+
+          &:hover {
             background-color: $lightGrayishCyan1;
             color: $veryDarkCyan;
           }
-          }
-          
-          &--light {
-            background-color: $lightGrayishCyan2;
-          }
-          
-          &--green.active {
-            background-color: $strongCyan;
-            color: $veryDarkCyan;
-          }
         }
-      
-        &__customPercentage{
-      
-          &:invalid:focus, &:invalid.active {
-            outline: $error-color solid 2px;
-          }
-          &:valid:focus, &:valid.active {
-            outline: solid 2px $strongCyan;
-          }
-        }
-        &__item {
 
+        &--light {
+          background-color: $lightGrayishCyan2;
+        }
+
+        &--green.active {
+          background-color: $strongCyan;
+          color: $veryDarkCyan;
+        }
+      }
+
+      &__customPercentage {
+        &:invalid:focus,
+        &:invalid.active {
+          outline: $error-color solid 2px;
+        }
+        &:valid:focus,
+        &:valid.active {
+          outline: solid 2px $strongCyan;
         }
       }
     }
+  }
 
-    &__people {
-      position: relative;
-      input {
-        background: url(/images/icon-person.svg) no-repeat 1.5rem center $lightGrayishCyan2;
-        margin-top: 1.2rem;
-        margin-bottom: 4rem;
-        cursor: pointer;
-      }
+  &__people {
+    position: relative;
+    input {
+      background: url(/images/icon-person.svg) no-repeat 1.5rem center
+        $lightGrayishCyan2;
+      margin-top: 0.8rem;
+      margin-bottom: 4rem;
+      cursor: pointer;
     }
+  }
   &__result {
-    display: grid;
     background-color: $veryDarkCyan;
-    margin-left: 2.4rem;
-    margin-right: 2.4rem;
-    padding: 4.6rem 2.4rem 2.4rem 2.4rem;
+    padding: 2.4rem 0 2.4rem 0;
     border-radius: $border-rad-med;
+    margin: 0 2.4rem;
+  }
+  &__container {
+    display: grid;
     color: $white;
     gap: 0;
+    padding: .4rem 2.4rem;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: 
-    "tip value1"
-    "total value2"
-    "button button";
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "tip value1"
+      "total value2";
     row-gap: 1rem;
-
+    // overflow-wrap: break-word;
+    // word-wrap: break-word;
+    // hyphens: auto;
+  
     @include breakpoint-up(large) {
-      width:50%;
+      width: 50%;
       margin: 0;
     }
 
   }
   &__reset {
     display: block;
-    width: 100%;
-    background-color: $strongCyan ;
-    padding: 1.4rem;
+    width: 80vw;
+    background-color: $strongCyan;
     color: $veryDarkCyan;
     border: none;
     border-radius: $border-rad-sm;
     grid-area: button;
     margin: 0 auto;
     font-weight: 700;
-    font-family: 'Space Mono', monospace, sans-serif;
+    font-family: "Space Mono", monospace, sans-serif;
     cursor: pointer;
-    transition: all .3s ease-in-out;
-    
+    transition: transform 0.3s ease-in-out;
+
     @include breakpoint-up(large) {
-      width:100%;
+      width: 100%;
       height: 4.8rem;
       align-self: end;
       justify-content: center;
       align-items: center;
-      // font-size: $font-med;
+      font-size: $font-med;
     }
 
     &:hover {
-      background-color: $lightGrayishCyan1 ;
+      background-color: $lightGrayishCyan1;
     }
   }
-  
+
   .description {
     font-size: $font-sm;
     font-weight: 700;
 
-    &>span {
+    & > span {
       display: block;
       font-size: $font-xsm;
       color: $darkGrayishCyan1;
     }
     @include breakpoint-up(large) {
       font-size: $font-med;
-      &>span {
+      & > span {
         font-size: $font-sm;
       }
     }
   }
 
   &__amount {
-    grid-area: tip; 
-
-  } 
+    grid-area: tip;
+  }
   &__total {
     grid-area: total;
-
-  } 
+  }
   .value {
     font-size: $font-lg;
     justify-self: end;
     color: $strongCyan;
     font-weight: 700;
-
+    
     @include breakpoint-up(large) {
       font-size: $font-xlg;
     }
   }
   &__tipValue {
     grid-area: value1;
-
   }
 
   &__totalValue {
     grid-area: value2;
   }
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
 }
