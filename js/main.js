@@ -28,7 +28,7 @@ document.addEventListener('input', function(e) {
   calculation();
 });
 
-button_grid.addEventListener('click', function(e) {
+button_grid.addEventListener('click', function(e) {num_people
 // calling function that removes class active from ALL..button children
   removeActive();
 
@@ -41,13 +41,13 @@ button_grid.addEventListener('click', function(e) {
 
 function calculation() {
   let billValue = bill.value;
-  let peopleValue = num_people.value;
+  let peopleToSplit = num_people.value;
   
   const buttonActive = document.getElementsByClassName('active')[0];
   
   const isActive = Array.from(document.getElementsByClassName("button__item")).some(({classList}) => classList.contains('active'));
 // zero value if one of conditions not allow for callculation
-  if (billValue == '' || isActive === false || peopleValue == '' || parseInt(peopleValue) <= 0 || parseFloat(billValue) <= 0 || parseInt(custom.value) <= 0 || Number.isInteger(parseFloat(peopleValue)) === false) {
+  if (billValue == '' || isActive === false || peopleToSplit == '' || parseInt(peopleToSplit) <= 0 || parseFloat(billValue) <= 0 || parseInt(custom.value) <= 0 || Number.isInteger(parseFloat(peopleToSplit)) === false) {
     tipAmount.textContent = '$'+ '0.00';
     totalSum.textContent = '$'+ '0.00';
 
@@ -65,9 +65,9 @@ function calculation() {
 
     let tipValue = billValue * tip * 0.01;
 
-    tipAmount.textContent = '$' + (tipValue / parseFloat(peopleValue)).toFixed(2);
+    tipAmount.textContent = '$' + (tipValue / parseFloat(peopleToSplit)).toFixed(2);
     
-    totalSum.textContent = '$' + ((parseFloat(billValue) + tipValue ) / parseFloat(peopleValue)).toFixed(2);
+    totalSum.textContent = '$' + ((parseFloat(billValue) + tipValue ) / parseFloat(peopleToSplit)).toFixed(2);
   }
  }
 
